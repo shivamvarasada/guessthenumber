@@ -5,6 +5,8 @@ const guess_btn = document.querySelector('#guess_btn');
 const previousGuessesHTML = document.querySelector('#previousGuesses');
 const guessesRemainingHTML = document.querySelector('#guessesRemaining');
 const high_low = document.querySelector('#high_low');
+const animationContainer = document.querySelector('#animation');
+let anim = null;
 
 let randomNumber = parseInt(Math.random() * 20) + 1;
 // console.log(` Globle number ${randomNumber}`);
@@ -20,6 +22,16 @@ if(playGame){
         validateInput(guess);
     });
 }
+
+// Initialize Lottie animation
+anim = lottie.loadAnimation({
+    container: animationContainer,
+    renderer: 'svg',
+    loop: false,
+    autoplay: false,
+    path: 'https://assets1.lottiefiles.com/packages/lf20_kji8qg4v.json' // You can change this to any celebration animation URL
+});
+
 
 function validateInput(guess){
     if(isNaN(guess) || guess < 1 || guess > 20){
@@ -42,6 +54,9 @@ function checkGuess(guess){
 
         if(guess === randomNumber){
             displayMessage(`You guessed the number correctly`);
+            const player = document.querySelector('#animation');
+            player.style.display = 'block';
+            player.play();
             endGame();
         }
         else if(guess < randomNumber){
@@ -121,5 +136,9 @@ function startAgain(){
     guessesRemainingHTML.textContent = '10';
     high_low.innerHTML = '';
     high_low.style.backgroundColor = 'transparent';
+    const player = document.querySelector('#animation');
+    player.style.display = 'none';
+    player.stop();
+    animationContainer.style.display = 'none';
     playGame = true;
 }
