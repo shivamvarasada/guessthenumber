@@ -5,13 +5,22 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Guess The Number</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css"><script src="https://cdnjs.cloudflare.com/ajax/libs/lottie-web/5.12.2/lottie.min.js"></script>
 </head>
 <body>
-    
+    <div class="animation-wrapper">
+        <dotlottie-player 
+            id="animation" 
+            src="https://lottie.host/6f6bc82e-1e90-4a85-a59f-72c59573df21/y0cHiA0JWw.lottie" 
+            background="transparent" 
+            speed="1.2" 
+            loop 
+            style="width: 100%; height: 100%; position: fixed; top: 0; left: 0; pointer-events: none; display: none; z-index: 1000;"
+        ></dotlottie-player>
+    </div>
+
     <h1>Try Your Luck</h1>
-    
     <div class="container">
-       
         <div class="box">
             <h2>Guess The Number</h2>
             <input type="text" class="input" placeholder="Enter your guess" id="guess">
@@ -35,5 +44,6 @@
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
 </body>
 </html>
