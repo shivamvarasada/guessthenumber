@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 3</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <h1>Project 3</h1>
+    
+    <div class="container">
+       
+        <div class="box">
+            <h2>Guess The Number</h2>
+            <input type="text" class="input" placeholder="Enter your guess" id="guess">
+            <p class="guess_info">*Guess the number between 1 and 20</p>
+            <div class="button_container">
+                <button id="start_again">Restart</button>
+                <button type="submit" id="guess_btn">Guess</button>
+            </div>
+            <p id="high_low"></p>
+        </div>
+        <div class="result">
+         
+            <div class="remaining">
+                <p>Guesses remaining</p>
+                <h4 id="guessesRemaining">10</h4>
+            </div>
+            <div class="previous">
+                <p>Previous guesses</p>
+                <h4 id="previousGuesses"></h4>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
